@@ -22,9 +22,9 @@ export default function Layout({ children }) {
                         <NavbarToggle />
                     </div>
                     <NavbarCollapse>                        
-                        <NavbarLink className="text-white" as={Link} href="/">Início</NavbarLink>
+                        <NavbarLink className="text-white" as={Link} href="/blog">Blog de Notícias</NavbarLink>
                         <NavbarLink className="text-white" as={Link} href="/tipocurso">Tipo de Curso</NavbarLink>
-                        <NavbarLink className="text-white" as={Link} href="/curso">Curso</NavbarLink>
+                        <NavbarLink className="text-white" as={Link} href="/curso">Noticias não publicadas</NavbarLink>
                     </NavbarCollapse>
                 </Navbar>
             </header>
