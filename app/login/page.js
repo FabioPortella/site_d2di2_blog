@@ -33,7 +33,7 @@ export default function Login() {
     const router = useRouter();
 
     const onSubmit = async (data) => {
-        //data.password = createSHA256Hash(data.password + 'khadfhyf388');
+        // data.password = createSHA256Hash(data.password + 'khadfhyf388');
 
         const resultado = await login(data);
     

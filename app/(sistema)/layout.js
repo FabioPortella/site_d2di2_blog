@@ -1,9 +1,18 @@
+'use client'; 
+
 import { Avatar, Dropdown, DropdownDivider, DropdownHeader, DropdownItem, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
 import Link from "next/link";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { logout } from "../login/actions";
+
 
 export default function Layout({ children }) {
+
+    const handleSair = async () => {
+        await logout();
+    }
+
     return (
         <>
             <header>
@@ -17,7 +26,7 @@ export default function Layout({ children }) {
                                 <span className="block text-sm">Usuário</span>
                                 <span className="block truncate text-sm font-medium">usuario@email.com</span>
                             </DropdownHeader>
-                            <DropdownItem>Sair</DropdownItem>
+                            <DropdownItem onClick={handleSair}>Sair</DropdownItem>
                         </Dropdown>
                         <NavbarToggle />
                     </div>

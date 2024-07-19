@@ -17,3 +17,7 @@ export async function login(data) {
         return 'E-mail e/ou senha inválido(s)';
     }
 }
+
+export async function logout() {
+    await signOut();
+}
