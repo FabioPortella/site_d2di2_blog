@@ -25,7 +25,7 @@ export default function Login() {
     const { register, handleSubmit, reset, formState: { errors } } = useForm({
         defaultValues: {
             email: '',
-            senha: ''
+            password: ''
         },
         resolver: yupResolver(loginSchema),
     });
@@ -33,7 +33,8 @@ export default function Login() {
     const router = useRouter();
 
     const onSubmit = async (data) => {
-        data.senha = createSHA256Hash(data.senha + 'khadfhyf388');
+        //data.password = createSHA256Hash(data.password + 'khadfhyf388');
+
         const resultado = await login(data);
     
         if(resultado && resultado !== '')
@@ -57,9 +58,9 @@ export default function Login() {
                                     <span className="text-sm text-red-600">{errors?.email?.message}</span>
                                 </div>
                                 <div className="mb-2">
-                                    <Label htmlFor="senha" className="text-sm">Senha</Label>
-                                    <TextInput id="senha" type="password" placeholder="******" {...register("senha")} />
-                                    <span className="text-sm text-red-600">{errors?.senha?.message}</span>
+                                    <Label htmlFor="password" className="text-sm">Senha</Label>
+                                    <TextInput id="password" type="password" placeholder="******" {...register("password")} />
+                                    <span className="text-sm text-red-600">{errors?.password?.message}</span>
                                 </div>
                                 <div className="flex justify-center">
                                     <Button type="submit">Entrar</Button>
