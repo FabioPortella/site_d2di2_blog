@@ -36,18 +36,18 @@ export default function Curso() {
                         horizontal
                     >
                         <h3 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-                        {p.titulo}
+                            {p.titulo}
                         </h3>
                         <h5 className="text-xl font-normal text-gray-700 dark:text-gray-400">
-                        {p.sub_titulo}
+                            {p.sub_titulo}
                         </h5>
                         <div className="text-sm text-gray-500 dark:text-gray-400">
-                        <span className="block">Publicado: {formatDate(p.data_publicacao)}</span>
-                        <span className="block">Modificado: {formatDate(p.data_modificacao)}</span>
-                    </div>
+                            <span className="block">Publicado: {formatDate(p.data_publicacao)}</span>
+                            <span className="block">Modificado: {formatDate(p.data_modificacao)}</span>
+                        </div>
                         <div div className="flex">
                         <Button>
-                            Read more
+                            Ler mais
                             <svg className="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 fillRule="evenodd"
