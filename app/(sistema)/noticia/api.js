@@ -12,7 +12,7 @@ export async function Inserir(data) {
         body: JSON.stringify(data)
     };
 
-    const url = process.env.API_URL + "/tipocurso";
+    const url = process.env.API_URL + "/noticias/";
 
     let retorno = {
         success: undefined,
@@ -24,8 +24,7 @@ export async function Inserir(data) {
             if (result.status == 201) {
                 //ações em caso de sucesso
                 retorno.success = true;
-                // retorno.message = resultData;
-                retorno.message = "Tipo de curso salvo com sucesso";
+                retorno.message = "Curso salvo com sucesso";
             }
             else {
                 //ações em caso de erro
@@ -66,12 +65,12 @@ export async function Listar() {
         cache: 'no-store'
     };
 
-    const url = process.env.API_URL + "/tipocurso";
+    const url = process.env.API_URL + "/noticias/";
 
     let retorno = {
         success: undefined,
         message: '',
-        data: null
+        data: null,
     };
 
     await fetch(url, args).then((result) => {
@@ -120,7 +119,7 @@ export async function Remover(id) {
         }
     };
 
-    const url = process.env.API_URL + "/tipocurso/" + id;
+    const url = process.env.API_URL + "/noticias/" + id;
 
     let retorno = {
         success: undefined,
@@ -132,7 +131,7 @@ export async function Remover(id) {
             if (result.status == 200) {
                 //ações em caso de sucesso
                 retorno.success = true;
-                retorno.message = "Tipo de curso removido com sucesso";
+                retorno.message = "Notícia removida com sucesso";
             }
             else {
                 //ações em caso de erro
@@ -173,7 +172,7 @@ export async function Obter(id) {
         cache: 'no-store'
     };
 
-    const url = process.env.API_URL + "/tipocurso/" + id;
+    const url = process.env.API_URL + "/noticias/" + id;
 
     let retorno = {
         success: undefined,
@@ -230,7 +229,7 @@ export async function Atualizar(data) {
         body: JSON.stringify(data)
     };
 
-    const url = process.env.API_URL + "/tipocurso/" + data.id;
+    const url = process.env.API_URL + "/noticias/" + data.id;
 
     let retorno = {
         success: undefined,
@@ -242,7 +241,7 @@ export async function Atualizar(data) {
             if (result.status == 200) {
                 //ações em caso de sucesso
                 retorno.success = true;
-                retorno.message = "Tipo de curso atualizado com sucesso";
+                retorno.message = "Noticia atualizada com sucesso";
             }
             else {
                 //ações em caso de erro
@@ -274,19 +273,16 @@ export async function Atualizar(data) {
     return retorno;
 }
 
-export async function Pesquisar(data) {
+export async function BuscarPorTipoCurso(id) {
     const args = {
-        method: 'POST',
+        method: 'GET',
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
             'x-api-key': process.env.API_KEY
         },
-        cache: 'no-store',
-        body: JSON.stringify(data)
+        cache: 'no-store'
     };
 
-    const url = process.env.API_URL + "/tipocurso/pesquisa/" ;
+    const url = process.env.API_URL + "/curso/buscarportipocurso/" + id;
 
     let retorno = {
         success: undefined,

@@ -13,7 +13,7 @@ const formatDate = (dateString) => {
     return format(date, 'dd/MM/yyyy HH:mm', { locale: ptBR });
 };
 
-export default function Curso() {
+export default function Blog() {
 
     const [atualizar, setAtualizar] = useState(null);
     const [dados, setDados] = useState(null);
@@ -28,16 +28,11 @@ export default function Curso() {
 
         if (resultado.success && resultado.data !== null) {
             let grid = resultado.data.map((p) =>
-
-                    <Card 
-                        key={p.id} 
-                        className="max-w-sm mb-5 ml-8" 
-                        imgSrc="https://flowbite-react.com/images/blog/image-1.jpg" 
-                        horizontal
-                    >
+                    <Card key={p.id} className="max-w-sm mb-5 ml-8" horizontal>                                            
                         <h3 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
                             {p.titulo}
                         </h3>
+                        <hr></hr>
                         <h5 className="text-xl font-normal text-gray-700 dark:text-gray-400">
                             {p.sub_titulo}
                         </h5>
@@ -56,11 +51,9 @@ export default function Curso() {
                             />
                             </svg>
                         </Button></div>
-                    </Card>
-                
+                    </Card>                
             );
             setDados(grid);
-
             if (resultado.message !== '')
                 toast.success(resultado.message);
         }
@@ -69,7 +62,6 @@ export default function Curso() {
             if (resultado.message !== '')
                 toast.error(resultado.message);
         }
-
         setBusy(p => false);
     }
 
@@ -88,7 +80,6 @@ export default function Curso() {
     }
 
     let modal = null;
-
 
     return (
         <>

@@ -1,10 +1,9 @@
-import { Button } from "flowbite-react";
+'use client'; 
+
+import { redirect } from 'next/navigation';
 
 export default function Home() {
+    redirect('/blog'); 
 
-    return (
-        <>
-            <p className="text-2xl">Pagina padrão</p>
-        </>
-    )
+    return null; 
 }
