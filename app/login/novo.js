@@ -37,7 +37,7 @@ export default function NovoUsuario() {
     const onSubmit = async (data) => {
         setBusy(busy => true);
 
-        // data.password = createSHA256Hash(data.senha + 'khadfhyf388');
+        // data.password = createSHA256Hash(data.password + 'khadfhyf388');
         data.data_nascimento = data.data_nascimento.toISOString().split('T')[0];
         
         const resultado = await Inserir(data);

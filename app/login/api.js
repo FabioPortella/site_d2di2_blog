@@ -77,13 +77,12 @@ export async function Autenticar(data) {
     };
 
     await fetch(url, args).then(async (result) => {
-        console.log(args)
         await result.json().then((resultData) => {
             if (result.status == 200) {
                 //ações em caso de sucesso
                 retorno.success = true;
                 retorno.message = '';
-                resultData.username = resultData.username; //pra armazenar no cookie
+                resultData.name = resultData.name; //pra armazenar no cookie
                 retorno.data = resultData;
             }
             else {
